@@ -9,8 +9,8 @@ session_start();
 	<title></title>
   
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="signup1.css">
   <link rel="stylesheet" type="text/css" href="hp.css">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
@@ -52,7 +52,7 @@ session_start();
             <form class="form-signin" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
               <div class="form-label-group">
                 <input type="text" autocomplete="off" id="inputUserame" name="username" class="form-control" placeholder="Username" required autofocus>
-                <label for="inputUserame">Name</label>
+                <label for="inputUserame">Username</label>
               </div>
 
               <div class="form-label-group">

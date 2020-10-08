@@ -91,6 +91,8 @@ session_start();
                   $emailsearch="select * from signup where email='$email'";
                   $query=mysqli_query($con,$emailsearch);
                   $emailcount=mysqli_num_rows($query);
+                  date_default_timezone_set('Asia/Kolkata');
+                  $date = date('d-m-Y H:i:s');  
 
                   $secretkey="6Leq09MZAAAAAKX3UjlJXP8Z7T1K92fA4XfKF2D1";
                   $responsekey=$_POST['g-recaptcha-response'];
@@ -107,6 +109,9 @@ session_start();
 
                     if($passdecode){
                       echo "<span>Login successful</span>";
+                      // $pass1=$emailpass['password'];
+                      $lhis="insert into loginhistory (email,timestamp,ip) values ('$email','$date','$userip')";
+                      mysqli_query($con,$lhis);
                       $_SESSION['username']=$emailpass['username'];
                       header('location:index.php');
 

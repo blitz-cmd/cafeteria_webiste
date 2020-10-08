@@ -1,0 +1,32 @@
+.row{
+	    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;flex-wrap: wrap;
+	display: flex;
+}
+
+.b{
+	background-color:red;
+	color:white;
+	/*width: 100%;*/
+	padding-top:100px;
+	padding-bottom:64px;
+	margin-top:80px;
+	justify-content:space-around;
+}
+
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+margin-bottom:0px;
+	/* margin-top:50px; */
+	padding-top:20px;
+	padding-bottom:10px;
+	font-family: 'Pacifico', cursive;
+}

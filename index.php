@@ -16,7 +16,8 @@
 
 
   </head>
-  <body><div class="main-loader"></div>
+  <body>
+    <div class="main-loader"></div>
   <div id="w">
     <div class="topnav">
         <a class="active" href="index.php">Home</a>
@@ -28,7 +29,7 @@
 
             if(isset($_SESSION['username'])){
                     echo "<a href='logout.php' style='float: right;'>Logout</a>";
-                    echo "<a href='#' style='float: right;'>{$_SESSION['username']}</a>";                    
+                    echo "<a href='#' style='float: right;'>Welcome {$_SESSION['username']}</a>";                    
             }else{
                     echo "<a href='signup1.php' style='float: right;'>Signup</a>";
                     echo "<a href='login.php' style='float: right;'>Login</a>";
@@ -89,7 +90,7 @@
     <hr style="padding-bottom: 5px;width: 14%;color: white;background-color: white;">
     <p style="padding-top: 31px;color: white;font-size: 30px;margin-bottom: 0;font-family: 'Oswald', sans-serif;letter-spacing: 1px;">FEED YOUR SQUAD OF 6 FOR ₹1000 OR 12 FOR ₹1500 ON GAME DAY.</p>
     <p style="font-size: 30px;color: white;padding-bottom: 27px;font-family: 'Oswald', sans-serif;letter-spacing: 1px;">ORDER ONLINE OR BY DRIVE-THRU FOR SAME-DAY PICKUP.</p>
-    <a href="order.php" class="btn aza">ORDER ONLINE</a>
+    <a href="order1.php" class="btn aza">ORDER ONLINE</a>
   </div>
 
 
@@ -117,7 +118,7 @@
 
 
 
-    <div class='b row' style="color:#edc8a3;background-color: #3e2b2e">
+  <div class='b row' style="color:#edc8a3;background-color: #3e2b2e">
     <div>
       <h3 class="container" style="color: red;font-family: 'Bangers', cursive;font-size:xxx-large;">
       Cup o' Joe
