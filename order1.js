@@ -1,19 +1,27 @@
 var tot=document.querySelector('#tot');
-var a=0;var b=0;var c=0;var d=0;var e=0;var f=0;var g=0;var h=0;var i=0;
+var a=0;var b=0;var c=0;var d=0;var e=0;var f=0;var g=0;var h=0;var i=0;var sum=0;
 // console.log(a,b,c,d,e,f,g,h,i);
 // console.log(sum);
 
 function sc1(value){
-  console.log(value);
+  // console.log(value);
   // var a=0;
   var b1=document.querySelector('#o1').innerText;
   var bb1=document.querySelector('#oo1');
   var sum=0;
+  // var g1=value;
+  // alert(g1);
   // a=0;
   a=value*b1;
   bb1.textContent=a;
   sum=a+b+c+d+e+f+g+h+i;  
   tot.textContent=sum;
+  
+
+  // var data={'z1':value};
+  // $.post('o.php',{name:g1},function(data){
+  //   console.log(data+name+"ss");
+  // });
 }
 
 function sc2(value){

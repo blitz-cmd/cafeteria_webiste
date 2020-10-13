@@ -28,3 +28,21 @@ height: 200px;
 	justify-content: space-around;
 	padding-bottom: 50px;
 }
+
+.yep{
+	padding-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.yep1{
+	letter-spacing: -0.8px;
+    color: #AAA7A6;
+    text-align: justify;
+}
+
+select{
+	width: 40px;
+    height: 30px;
+}
+

@@ -1,0 +1,24 @@
+#tan{
+
+	/*background-image: url(images/thankyou1.jpg);*/
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(images/thankyou1.jpg);
+	background-size: 100%;
+    padding-bottom: 43px;
+    padding-top: 51px;
+    padding-right: 115px;
+    padding-left: 115px;
+}
+
+#tan1{
+	text-align: center;
+    padding-top: 150px;
+    font-size: 85px;
+    color: white;
+    border: 6px solid white;
+    padding-bottom: 146px;
+
+ /*.fa-envelope:before {
+    content: "\f0e0";
+    /*padding-left: 10p;*/
+    /*padding-right: 30px;*/
+}

@@ -86,8 +86,8 @@ session_start();
                 include "dbcon.php";
 
                 if(isset($_POST['submit'])){
-                  $email=$_POST['email'];
-                  $password=$_POST['password'];
+                  $email=mysqli_real_escape_string($con,$_POST['email']);
+                  $password=mysqli_real_escape_string($con,$_POST['password']);
                   $emailsearch="select * from signup where email='$email'";
                   $query=mysqli_query($con,$emailsearch);
                   $emailcount=mysqli_num_rows($query);
@@ -113,6 +113,8 @@ session_start();
                       $lhis="insert into loginhistory (email,timestamp,ip) values ('$email','$date','$userip')";
                       mysqli_query($con,$lhis);
                       $_SESSION['username']=$emailpass['username'];
+                      $_SESSION['email']=$emailpass['email'];
+                      $_SESSION['id']=$emailpass['id'];
                       header('location:index.php');
 
                     }else{
