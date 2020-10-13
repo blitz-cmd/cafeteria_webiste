@@ -20,13 +20,17 @@
         include "dbcon.php";
             session_start();
             ob_start();
-            $oid=$_SESSION['oid'];
+            
             if(isset($_SESSION['username'])){
-                    echo "<a href='logout.php' style='float: right;'>Logout</a>";
-                    echo "<a href='#' style='float: right;'>{$_SESSION['username']}</a>";                    
+            	if($_SESSION['pdetails']=="orderdetails"){
+            		echo "<a href='logout.php' style='float: right;'>Logout</a>";
+                    echo "<a href='#' style='float: right;'>{$_SESSION['username']}</a>";
+                    $oid=$_SESSION['oid'];
+            	}else{
+            		header('location:odetails.php');
+            	}
             }else{
-                    echo "<a href='signup1.php' style='float: right;'>Signup</a>";
-                    echo "<a href='login.php' style='float: right;'>Login</a>";
+            	header('location:login.php');
             }
         ?>
 </div>
@@ -114,46 +118,7 @@
 	</div>
 </div>
 
-<<?php 
-	unset($_SESSION["oquantity"]);
-	unset($_SESSION["oid"]);
-	unset($_SESSION["sum"]);
-?>
-
-<div class='b row1' style="color:#edc8a3;background-color: #3e2b2e">
-    <div>
-      <h3 class="container" style="color: red;font-family: 'Bangers', cursive;font-size:xxx-large;">
-      Cup o' Joe
-    </h3>
-    <p style="padding-left: 20px;margin-top: -21px;color: red;">COFFEE ROASTERS</p>
-    </div>
-    <div>
-      <ul style="list-style-type:none;">
-        <li>Products</li>
-        <li>Our Company</li>
-        <li>Join Our Team</li>
-        <li>For Bussiness</li>
-        <li>For Marketing</li>  
-      </ul>
-    </div>
-    <div>
-      <h3 style="font-weight:bold">
-        Follow Us On :-
-      </h3>
-      <a href="#" style="color:#FC67F5;text-decoration: none;" class="fab fa-instagram fa-2x"></a>
-      <a href="#" style="color:blue;text-decoration: none;" class="fab fa-facebook fa-2x"></a>
-      <a href="#" style="color:green;text-decoration: none;" class="fab fa-whatsapp fa-2x"></a>
-      <a href="#" style="color:#6777FF;text-decoration: none;" class="fab fa-discord fa-2x"></a>
-    </div>
-    
-  </div>
-
-
-  <div class="footer" style="color:#edc8a3;background-color: #3e2b2e">
-    <p>Trademark - Cup o' Joe 2020. All Rights Reserved<br>
-  </p>
-  </div>
-  </div>
+<?php  include "footer.php";?>
 
 </body>
 </html>

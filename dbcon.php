@@ -12,4 +12,4 @@ if($con){
 }else{
 	echo "<span>connection failed</span>";}
 
- ?>
+?>

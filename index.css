@@ -1,0 +1,36 @@
+#drf{
+  background-image: url('https://4rsmokehouse.com/wp-content/uploads/2020/09/4R-Football-Party-Pack-WEB.jpg?force=true');
+  width: 100%;
+  text-align:center;
+}
+
+.aza{
+    color: #886735;
+    background-color: white;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.ghj{
+  width: 100%;height: 93vh;
+}
+
+.img{
+  width: 200px;
+  padding-right: 7px;
+  padding-top: 37px;
+}
+
+#ord{
+    padding-top: 30px;
+    background-color: #F0EDEC;
+    margin-top: 69px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
