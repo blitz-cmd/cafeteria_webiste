@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>News</title>  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="news.css">
   <link rel="stylesheet" type="text/css" href="navbar.css">
@@ -20,7 +20,7 @@
 <body>
 
 
-  <div class="topnav">
+  <!-- <div class="topnav">
       <a class="active" href="index.php">Home</a>
       <a href="news.php">News</a>
       <a href="#contact">Contact</a>  
@@ -37,20 +37,67 @@
                     echo "<a href='login.php' style='float: right;'>Login</a>";
             }
       ?>
-    </div>
+    </div> -->
 
-  <div class="container row1" style="background-color:#E8F4F7 ;padding-left: 0;margin-top: 87px;margin-bottom: 87px;">
-    <div class="col-xl-7" style="padding-left: 0;">
-      <img src="images/mask.jpg" style="width: 104%;">      
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dep" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="news.php">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">Contact Us</a>
+      </li> 
+      <?php  
+            session_start();
+            $_SESSION['pdetails']="news";
+            if(isset($_SESSION['username'])){ 
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="#">'.$_SESSION["username"].'</a>
+                </li>';
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="logout.php">Logout</a>
+                </li>';}else{
+      
+                echo '<li class="nav-item">
+                  <a class="nav-link dep" href="login.php">Login</a>
+                </li>';  
+                echo '<li class="nav-item">
+                  <a class="nav-link dep" href="signup.php">SignUp</a>
+                </li>';
+              } ?>   
+    </ul>
+
+    
+  </div>
+</nav>
+
+
+
+
+  <div class="container row1" style="background-color:#E8F4F7 ;padding-left: 0;margin-top: 87px;margin-bottom: 87px;padding-right: 0">
+    <div class="col-xl-7 col-sm-12" style="padding-left: 0;padding-right: 0;">
+      <img src="images/mask.jpg" style="width: 100%;height: 100%">      
     </div>
-    <div class="col-xl-5" style="text-align: center;color:#0A8FA5 ;padding-right: 0;padding-left: 67px;padding-top: 72px;">
+    <div class="col-xl-5 col-sm-12" style="text-align: center;color:#0A8FA5 ;padding-right: 0;padding-top: 44px;padding-left: 0">
       <p style="font-family: 'Oswald', sans-serif;font-size: 40px;">DIDICATED TO SERVING</p>
       <p style="font-family: 'Sansita Swashed', cursive;font-size: 37px;">Safely & Responsibly</p>
       <p style="font-family: 'Oswald', sans-serif;font-size: 40px;">WITH A SMILE</p>      
     </div>    
   </div>
 
-<div style="text-align: center;padding-left: 100px;padding-right: 100px;" class="container">
+<div style="text-align: center;padding-left: 100px;padding-right: 100px;" class="container" id="tgf">
   <div>
     <h1 style="font-family: 'Sansita Swashed', cursive;font-size: 3em;text-decoration: underline;">News & Update</h1>
     <h1 class="fon">Face covering required in-store for you and our team members to help keep everyone safe</h1>
@@ -63,10 +110,10 @@
   </div>
 
 
-<p style="font-family: 'Pacifico', cursive;font-size: 31px;font-weight: 600;padding-top: 50px;padding-bottom: 50px;">Though your experience visiting us may look a little different nowadays, we are here to serve you safely, responsibly, and with a smile — even if it’s under our face coverings.</p>
-<p style="font-family: 'Pacifico', cursive;font-weight: 600;font-size: 40px;padding-bottom: 20px;">LET’S KEEP EACH OTHER SAFE.</p></div>
+<p style="font-family: 'Pacifico', cursive;font-size: 31px;font-weight: 600;padding-top: 50px;padding-bottom: 50px;" id="kgf">Though your experience visiting us may look a little different nowadays, we are here to serve you safely, responsibly, and with a smile — even if it’s under our face coverings.</p>
+<p style="font-family: 'Pacifico', cursive;font-weight: 600;font-size: 40px;padding-bottom: 20px;" id="kgf1">LET’S KEEP EACH OTHER SAFE.</p></div>
 
-<div class="container row1">
+<div class="container row1" id="kgf2">
   <div class="col-xl-6">
     <img src="images/rule1.jpg" style="width: 100%;padding-top: 30px;">
   </div>
@@ -81,5 +128,16 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </body>
+    
+    <script>        
+        $(function () {
+        'use strict'
+
+        $('[data-toggle="offcanvas"]').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+         })
+        })
+    </script>
 </html>

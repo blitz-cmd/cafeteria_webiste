@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Order Details</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="navbar.css">
-    <link rel="stylesheet" type="text/css" href="footer.css">
-    <link rel="stylesheet" type="text/css" href="odetails.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Order Details</title>  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="navbar.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
+  <link rel="stylesheet" type="text/css" href="odetails.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <!-- Favicons -->
   <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -24,10 +21,11 @@
 
 <!-- Custom styles for this template -->
 <link href="form-validation.css" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body class="bg-light">
 
-<div class="topnav">
+<!-- <div class="topnav">
         <a class="active" href="index.php">Home</a>
         <a href="news.php">News</a>
         <a href="#contact">Contact</a>  
@@ -47,7 +45,54 @@
                       header('location:login.php');
               }
         ?>
-</div>
+</div> -->
+
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dep" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="news.php">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">Contact Us</a>
+      </li> 
+      <?php  
+            session_start();
+            ob_start();
+            if(isset($_SESSION['username'])){
+              if($_SESSION['pdetails']=="order"){
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="#">'.$_SESSION["username"].'</a>
+                </li>';
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="logout.php">Logout</a>
+                </li>';}else{
+                      header('location:order.php');
+              }
+            }else{
+                      header('location:login.php');
+              } ?>      
+    </ul>
+
+    
+  </div>
+</nav>
+
+
+
+
 
     <div class="container">
   <div class="py-5 text-center">
@@ -109,7 +154,7 @@
         <div class="row">
           <div class="col-md-12 mb-3">
             <label for="firstName">Name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="Full Name" name="name" required>
+            <input type="text" class="form-control" autocomplete="off" id="firstName" placeholder="Full Name" name="name" required>
             <div class="invalid-feedback">
               Valid name is required.
             </div>
@@ -121,7 +166,7 @@
 
         <div class="mb-3">
           <label for="address">Address</label>
-          <textarea class="form-control" rows="3" name="address" id="address" placeholder="Full Address" required></textarea>
+          <textarea class="form-control" rows="3" autocomplete="off" name="address" id="address" placeholder="Full Address" required></textarea>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
@@ -144,7 +189,7 @@
         <div class="d-block my-3">
           
           <div class="custom-control custom-radio">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <input id="debit" name="paymentMethod" type="radio"  class="custom-control-input" required>
             <label class="custom-control-label" for="debit">Debit card</label>
           </div>
               
@@ -152,7 +197,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" name="cname" id="cc-name" placeholder="" required>
+            <input type="text" class="form-control" autocomplete="off" name="cname" id="cc-name" placeholder="" required>
             <small class="text-muted">Full name as displayed on card</small>
             <div class="invalid-feedback">
               Name on card is required
@@ -160,7 +205,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="cc-number">Card number</label>
-            <input type="text" class="form-control" name="cno" id="cc-number" placeholder="" required>
+            <input type="text" class="form-control" autocomplete="off" name="cno" id="cc-number" placeholder="" required>
             <div class="invalid-feedback">
               Credit card number is required
             </div>
@@ -169,14 +214,14 @@
         <div class="row">
           <div class="col-md-3 mb-3">
             <label for="cc-expiration">Expiration</label>
-            <input type="text" class="form-control" name="exp" id="cc-expiration" placeholder="" required>
+            <input type="text" class="form-control" autocomplete="off" name="exp" id="cc-expiration" placeholder="" required>
             <div class="invalid-feedback">
               Expiration date required
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" name="cvv" id="cc-cvv" placeholder="" required>
+            <input type="text" class="form-control" autocomplete="off" name="cvv" id="cc-cvv" placeholder="" required>
             <div class="invalid-feedback">
               Security code required
             </div>
@@ -199,5 +244,40 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
-<script src="form-validation.js"></script></body>
+<script src="form-validation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+<script>   
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  window.addEventListener('load', function () {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  }, false)
+})()
+
+
+        $(function () {
+        'use strict'
+
+        $('[data-toggle="offcanvas"]').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+         })
+        })
+    </script>
 </html>

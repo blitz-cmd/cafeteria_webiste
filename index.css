@@ -4,6 +4,15 @@
   text-align:center;
 }
 
+#drf1{
+  padding-top: 200px;
+  padding-bottom: 31px;
+  font-size: 6em;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 5px;
+}
+
 .aza{
     color: #886735;
     background-color: white;
@@ -18,6 +27,7 @@
 
 .ghj{
   width: 100%;height: 93vh;
+  /*background-image: url(images/tony-lee-8IKf54pc3qk-unsplash.jpg);*/
 }
 
 .img{
@@ -34,3 +44,52 @@
     text-align: center;
 }
 
+.main-loader {
+  position: fixed;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif) center no-repeat white;
+  background-size:50px;
+}
+
+.bg-dark {
+    background-color: #333!important;
+}
+
+#hxh{
+  color: #9cd8ef;font-family: 'Ranchers', cursive;font-size: xxx-large;letter-spacing: 4px;
+}
+
+@media(max-width: 415px) {
+  #drf{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #drf1{
+    font-size: 5em;
+  }
+  .dxd{
+    display: none!important;
+  }
+  #hxh{
+    padding-bottom: 8rem!important;
+  }
+  .ghj{
+    width: 157%;
+    height: 59vh;
+    margin-left: -119px;
+  }
+  #ban2{
+    padding-bottom: 0!important;
+  }
+
+}
+
+@media(max-width: 321px){
+  #drf1{
+    font-size: 4em;
+  }
+}

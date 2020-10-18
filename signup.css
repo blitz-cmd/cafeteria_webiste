@@ -126,6 +126,13 @@ body {
     color:green;
 }
 
-span{
+div.span{
     color:red;
+}
+
+@media(max-width: 415px){
+  .g-recaptcha{
+    transform:scale(0.77)!important;-webkit-transform:scale(0.77)!important;transform-origin:0 0!important;
+    -webkit-transform-origin:0 0!important;padding-left: 0!important;
   }
+}

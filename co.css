@@ -15,3 +15,51 @@
     border: 6px solid white;
     padding-bottom: 146px;
 }
+
+iframe {
+  max-width: 100%;
+}
+
+@media(max-width: 415px){
+    #baru{
+        padding-left: 20px!important;
+    }
+    #hina{
+        width: 85%!important;
+    }
+    #tan{
+        padding-bottom: 55px;
+        padding-top: 55px;
+        padding-right: 55px;
+        padding-left: 55px;
+    }
+    #tan1{
+        padding-top: 50px;
+        font-size: 2em;
+        padding-bottom: 50px;
+        border: 4px solid white;
+    }
+    #sasu{
+        font-size: 3em!important;
+    }
+    #saku{
+        font-size: 1.5em!important;
+    }
+}
+@media(max-width: 320px){
+    #sasu{
+        font-size: 2.5em!important;
+    }
+    #saku{
+        font-size: 1.3em!important;
+    }
+    #jira{
+        font-size: 0.7em!important;
+    }
+    /*#ert{
+        font-size: 17px!important;
+    }
+    .ert1{
+        font-size: 18px!important;
+    }*/
+}

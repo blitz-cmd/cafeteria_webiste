@@ -1,6 +1,8 @@
 <!DOCTYPE html>
   <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Cafeteria</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -12,49 +14,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-
-
-
   </head>
   <body>
+
     <div class="main-loader"></div>
+
   <div>
-    <div class="topnav">
-        <a class="active" href="index.php">Home</a>
-        <a href="news.php">News</a>
-        <a href="#contact">Contact</a>  
-        <a href="#about">About</a>
-        <?php 
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dep" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="news.php">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">Contact Us</a>
+      </li>
+      <?php  
             session_start();
             $_SESSION['pdetails']="index";
-            if(isset($_SESSION['username'])){
-                    echo "<a href='logout.php' style='float: right;'>Logout</a>";
-                    echo "<a href='#' style='float: right;'>Welcome {$_SESSION['username']}</a>";                    
-            }else{
-                    echo "<a href='signup.php' style='float: right;'>Signup</a>";
-                    echo "<a href='login.php' style='float: right;'>Login</a>";
-            }
-        ?>
-      </div>
+            if(isset($_SESSION['username'])){ 
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="#">Welcome '.$_SESSION["username"].'</a>
+                </li>';
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="logout.php">Logout</a>
+                </li>';}else{
+      
+                echo '<li class="nav-item">
+                  <a class="nav-link dep" href="login.php">Login</a>
+                </li>';  
+                echo '<li class="nav-item">
+                  <a class="nav-link dep" href="signup.php">SignUp</a>
+                </li>';
+              } ?>  
+    </ul>
 
+    
+  </div>
+</nav>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+ 
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <div class="carousel-inner"><div class="carousel-caption d-none d-md-block" style="text-align: justify;padding-bottom: 177px;">
-      <h1 style="color: #9cd8ef;font-family: 'Ranchers', cursive;font-size: xxx-large;letter-spacing: 4px;">Welcome to Cup o' Joe</h1>
-      <p style="color:white;font-family: 'Lobster', cursive;font-size: large;">'The Night Cafe' and 'The Starry Night' still emit such pathos, density, and intensity that they send shivers down the spine. Whether Van Gogh thought in color or felt with his intellect, the radical color, dynamic distortion, heart, soul, and part-by-part structure in these paintings make him a bridge to a new vision and the vision itself.</p>
-        <p style="color:white;float: right;font-family: 'Lobster', cursive;font-size: large;">-Jerry Saltz</p>
+    <div class="carousel-inner"><div id="ban2" class="carousel-caption  d-md-block" style="text-align: justify;padding-bottom: 177px;">
+      <h1 id="hxh"><span></span>Welcome to Cup o' Joe</h1>
+      <p class="dxd" style="color:white;font-family: 'Lobster', cursive;font-size: large;">'The Night Cafe' and 'The Starry Night' still emit such pathos, density, and intensity that they send shivers down the spine. Whether Van Gogh thought in color or felt with his intellect, the radical color, dynamic distortion, heart, soul, and part-by-part structure in these paintings make him a bridge to a new vision and the vision itself.</p>
+        <p class="dxd" style="color:white;float: right;font-family: 'Lobster', cursive;font-size: large;">-Jerry Saltz</p>
     </div>
       <div class="carousel-item active">
         <img class="ghj" src="images/tony-lee-8IKf54pc3qk-unsplash.jpg" alt="First slide">
-        <!-- <div class="carousel-caption d-none d-md-block">
-      <h5>Welcome to Cup o' Joe</h5>
-      <p>'The Night Cafe' and 'The Starry Night' still emit such pathos, density, and intensity that they send shivers down the spine. Whether Van Gogh thought in color or felt with his intellect, the radical color, dynamic distortion, heart, soul, and part-by-part structure in these paintings make him a bridge to a new vision and the vision itself.</p>
-    </div> -->
       </div>
       <div class="carousel-item">
         <img class="ghj" src="images/nathan-dumlao-I_394sxx0ec-unsplash  (2).jpg" alt="Second slide">
@@ -75,9 +99,9 @@
 
 
   <div id="drf" style="padding-bottom: 235px;">
-    <h1 style="padding-top: 200px;padding-bottom: 31px;font-size: 6em;color: white;font-family: 'Oswald', sans-serif;letter-spacing: 5px;">GAME DAY PARTY PACKAGES</h1>
+    <h1 id="drf1">GAME DAY PARTY PACKAGES</h1>
     <hr style="padding-bottom: 5px;width: 14%;color: white;background-color: white;">
-    <p style="padding-top: 31px;color: white;font-size: 30px;margin-bottom: 0;font-family: 'Oswald', sans-serif;letter-spacing: 1px;">FEED YOUR SQUAD OF 6 FOR ₹1000 OR 12 FOR ₹1500 ON GAME DAY.</p>
+    <p style="padding-top: 31px;color: white;font-size: 30px;margin-bottom: 0;font-family: 'Oswald', sans-serif;letter-spacing: 1px;padding-bottom: 20px;">FEED YOUR SQUAD OF 6 FOR ₹1000 OR 12 FOR ₹1500 ON GAME DAY.</p>
     <p style="font-size: 30px;color: white;padding-bottom: 27px;font-family: 'Oswald', sans-serif;letter-spacing: 1px;">ORDER ONLINE OR BY DRIVE-THRU FOR SAME-DAY PICKUP.</p>
     <a href="order.php" class="btn aza">ORDER ONLINE</a>
   </div>
@@ -104,12 +128,23 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-  </body><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-  <script>
-    var $preLoader = $(".main-loader");
-$(window).load(function() {
-    $preLoader.fadeOut(""); // Animate loader off screen
-});
-  </script>
-  </html>
+  <!-- <script src="index.js"></script> -->
+
+  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        var $preLoader = $(".main-loader");
+        $(window).load(function() {
+        $preLoader.fadeOut(""); // Animate loader off screen
+        });
+
+        $(function () {
+        'use strict'
+
+        $('[data-toggle="offcanvas"]').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+         })
+        })
+    </script>
+</html>

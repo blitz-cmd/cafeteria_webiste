@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Order Now</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="navbar.css">
@@ -10,11 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
 <body>
 <div>
-<div class="topnav">
+
+<!-- <div class="topnav">
         <a class="active" href="index.php">Home</a>
         <a href="news.php">News</a>
         <a href="#contact">Contact</a>  
@@ -30,7 +34,47 @@
             	header('location:login.php');
             }
         ?>
-      </div>
+      </div> -->
+
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dep" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="news.php">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">Contact Us</a>
+      </li> 
+      <?php  
+            session_start();
+            ob_start();
+            if(isset($_SESSION['username'])){ 
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="#">'.$_SESSION["username"].'</a>
+                </li>';
+                echo '<li class="nav-item">
+                <a class="nav-link dep" href="logout.php">Logout</a>
+                </li>';}else{
+      			header('location:login.php');
+              } ?>    
+    </ul>    
+  </div>
+</nav>
+
+
+
+
 
 <div style="color:red;">  
   <marquee behavior="scroll" direction="left" >Check out latest covid-19 status in your area before ordering. Delivery time may vary according to restriction in your area. Maharshtra:<span id="data1"></span>,  Mumbai:<span id="data2"></span>,  Pune:<span id="data3"></span>,  Thane:<span id="data4"></span>,  Satara:<span id="data5"></span></marquee>
@@ -220,7 +264,24 @@ include "o.php"
 <?php  include "footer.php";?>
 
 <script type="text/javascript" src="order.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 <?php 
 include "api.php" ?>
+<script>        
+        $(function () {
+        'use strict'
+        $('[data-toggle="offcanvas"]').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+         })
+        })
+    </script>
 </html>
+
+
+
+
+    
+    

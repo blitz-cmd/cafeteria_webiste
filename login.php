@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Login</title>
   
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -11,12 +13,13 @@
   <link rel="stylesheet" type="text/css" href="footer.css">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
 
 <body>
 
-    <div class="topnav">
+    <!-- <div class="topnav">
         <a class="active" href="index.php">Home</a>
         <a href="news.php">News</a>
         <a href="#contact">Contact</a>  
@@ -30,7 +33,48 @@
                     echo "<a href='login.php' style='float: right;'>Login</a>";
             }
       ?>
-      </div>
+      </div> -->
+
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dep" href="index.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="news.php">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dep" href="#">Contact Us</a>
+      </li>
+      <?php  
+            session_start();
+            ob_start();
+            if(isset($_SESSION['username'])){ 
+                header('location:index.php'); 
+              }else{      
+                echo '<li class="nav-item">
+                  <a class="nav-link dep" href="login.php">Login</a>
+                </li>';  
+                echo '<li class="nav-item">
+                  <a class="nav-link dep" href="signup.php">SignUp</a>
+                </li>';
+              } ?>     
+    </ul>
+
+    
+  </div>
+</nav>
+
+
 
 
   <div class="container">
@@ -109,7 +153,7 @@
                     }else{
                   echo "<span>Invalid recaptcha</span>";
                 }
-                  }
+                  }ob_end_clean();
                 ?>
 
 
@@ -130,4 +174,22 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+            $(window).bind("resize", function () {
+            console.log($(this).width())
+            if ($(this).width() < 415) {
+                $('.card-body').removeClass('card-body').addClass('card-body container')
+            } else {
+                $('.card-body').removeClass('card-body container').addClass('card-body')
+            }
+            }).trigger('resize');
+
+            $(function () {
+          'use strict'
+
+          $('[data-toggle="offcanvas"]').on('click', function () {
+          $('.offcanvas-collapse').toggleClass('open')
+           })
+          })
+    </script>
 </html>

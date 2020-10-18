@@ -1,9 +1,9 @@
 <div class='b row1' style="color:#edc8a3;background-color: #3e2b2e">
     <div>
-      <h3 class="container" style="color: red;font-family: 'Bangers', cursive;font-size:xxx-large;">
+      <h3 class="container" id="jfe">
       Cup o' Joe
     </h3>
-    <p style="padding-left: 20px;margin-top: -21px;color: red;">COFFEE ROASTERS</p>
+    <p  id="jfe2" style="padding-left: 20px;margin-top: -21px;color: red;">COFFEE ROASTERS</p>
     </div>
     <div>
       <ul style="list-style-type:none;">
@@ -15,7 +15,7 @@
       </ul>
     </div>
     <div>
-      <h3 style="font-weight:bold">
+      <h3  id="jfe1" style="font-weight:bold">
         Follow Us On :-
       </h3>
       <a href="#" style="color:#FC67F5;text-decoration: none;" class="fab fa-instagram fa-2x"></a>
