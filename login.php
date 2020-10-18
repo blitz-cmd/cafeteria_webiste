@@ -123,7 +123,34 @@
 
                   $secretkey="6Leq09MZAAAAAKX3UjlJXP8Z7T1K92fA4XfKF2D1";
                   $responsekey=$_POST['g-recaptcha-response'];
-                  $userip=$_SERVER['REMOTE_ADDR'];
+                  // ------------------------------
+//                   function getUserIpAddr(){
+//     if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+//         //ip from share internet
+//         $ip = $_SERVER['HTTP_CLIENT_IP'];
+//     }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+//         //ip pass from proxy
+//         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+//     }else{
+//         $ip = $_SERVER['REMOTE_ADDR'];
+//     }
+//     return $ip;
+// }
+
+// echo 'User Real IP - '.'getUserIpAddr(); </script>';
+                  $ip = getenv('HTTP_CLIENT_IP')?:
+getenv('HTTP_X_FORWARDED_FOR')?:
+getenv('HTTP_X_FORWARDED')?:
+getenv('HTTP_FORWARDED_FOR')?:
+getenv('HTTP_FORWARDED')?:
+getenv('REMOTE_ADDR');
+
+// echo $ip;
+
+                  // ===============================/
+                  // $userip=$_SERVER['REMOTE_ADDR'];
+$userip=$ip;
+// $userip="11111";
                   $url="https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$responsekey&remoteip=$userip";
                   $response=file_get_contents($url);
                   $response=json_decode($response);
