@@ -28,7 +28,7 @@
 
 
   <div class="footer" style="color:#edc8a3;background-color: #3e2b2e">
-    <p>Trademark - Cup o' Joe 2020. All Rights Reserved<br>
+    <p>Trademark - Cup o' Joe 2020. All Rights Reserved to Blitz<br>
   </p>
   </div>
   </div>
