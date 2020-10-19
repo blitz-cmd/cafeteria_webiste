@@ -3,7 +3,9 @@
 }
 
 .fon1{
-  font-family: 'Pacifico', cursive;letter-spacing: 1px;font-size: 22px;
+  /*font-family: 'Pacifico', cursive;*/
+  letter-spacing: 1px;
+  font-size: 22px;
 }
 
 @media(max-width: 415px){
