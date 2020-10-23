@@ -23,9 +23,9 @@ if(isset($_POST['delete'])){
 	unset($_SESSION["oquantity"]);
 	unset($_SESSION["oid"]);
 	unset($_SESSION["sum"]);
-	header('location:order1.php');
+	header('location:order.php');
 }	
 
 
 ob_end_flush();
- ?>
+?>

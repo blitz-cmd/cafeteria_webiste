@@ -12,35 +12,10 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> -->
 </head>
 <body>
 
-<!-- <div class="topnav">
-        <a class="active" href="index.php">Home</a>
-        <a href="news.php">News</a>
-        <a href="#contact">Contact</a>  
-        <a href="#about">About</a>
-        <?php 
-        include "dbcon.php";
-            session_start();
-            ob_start();
-            
-            if(isset($_SESSION['username'])){
-            	if($_SESSION['pdetails']=="orderdetails"){
-            		echo "<a href='logout.php' style='float: right;'>Logout</a>";
-                    echo "<a href='#' style='float: right;'>{$_SESSION['username']}</a>";
-                    $oid=$_SESSION['oid'];
-            	}else{
-            		header('location:odetails.php');
-            	}
-            }else{
-            	header('location:login.php');
-            }
-        ?>
-</div> -->
-
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
   <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
     <span class="navbar-toggler-icon"></span>
@@ -71,7 +46,9 @@
                 </li>';
                 echo '<li class="nav-item">
                 <a class="nav-link dep" href="logout.php">Logout</a>
-                </li>';}else{
+                </li>';
+                $oid=$_SESSION['oid'];
+              }else{
             		header('location:odetails.php');
             	}
             }else{
@@ -189,10 +166,10 @@
     </script>
     <script>
       function responseveIframe() {
-  $('iframe').height(
-    $('iframe').attr("height") / $('iframe').attr("width") * $('iframe').width()
-  );
-}
+      $('iframe').height(
+      $('iframe').attr("height") / $('iframe').attr("width") * $('iframe').width()
+      );
+      }
 
 responseveIframe();
 

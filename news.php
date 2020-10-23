@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> -->
 
 
 
@@ -22,26 +21,7 @@
 <body>
 
 
-  <!-- <div class="topnav">
-      <a class="active" href="index.php">Home</a>
-      <a href="news.php">News</a>
-      <a href="#contact">Contact</a>  
-      <a href="#about">About</a>
-      <?php 
-            session_start();
-            $_SESSION['pdetails']="news";
-
-            if(isset($_SESSION['username'])){
-                    echo "<a href='logout.php' style='float: right;'>Logout</a>";
-                    echo "<a href='#' style='float: right;'>{$_SESSION['username']}</a>";                    
-            }else{
-                    echo "<a href='signup.php' style='float: right;'>Signup</a>";
-                    echo "<a href='login.php' style='float: right;'>Login</a>";
-            }
-      ?>
-    </div> -->
-
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
   <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
     <span class="navbar-toggler-icon"></span>

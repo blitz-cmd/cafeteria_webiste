@@ -13,7 +13,6 @@ function sc1(value){
 
 function sc2(value){
   console.log(value);
-  // var a=0;
   var b2=document.querySelector('#o2').innerText;
   var bb2=document.querySelector('#oo2');
   var sum=0;

@@ -14,6 +14,6 @@ $con=mysqli_connect($server,$user,$password,$db);
 if($con){
 	
 }else{
-	echo "<span>connection failed</span>";}
+	echo "<span>connection failed to server</span>";}
 
 ?>

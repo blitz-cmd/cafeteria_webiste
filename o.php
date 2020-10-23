@@ -5,6 +5,7 @@ function rs($len){
 	$str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 	return substr(str_shuffle($str_result),0, $len);
 }
+
 $i=0;
 
 if(isset($_POST['order'])){

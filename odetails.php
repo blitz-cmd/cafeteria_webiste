@@ -10,7 +10,6 @@
   <link rel="stylesheet" type="text/css" href="footer.css">
   <link rel="stylesheet" type="text/css" href="odetails.css">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> -->
     <!-- Favicons -->
   <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -20,37 +19,13 @@
   <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
   <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#563d7c">
-
-<!-- Custom styles for this template -->
-<link href="form-validation.css" rel="stylesheet">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
+  <!-- Custom styles for this template -->
+  <link href="form-validation.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  </head>
 <body class="bg-light">
 
-<!-- <div class="topnav">
-        <a class="active" href="index.php">Home</a>
-        <a href="news.php">News</a>
-        <a href="#contact">Contact</a>  
-        <a href="#about">About</a>
-        <?php 
-            session_start();
-            ob_start();
-            if(isset($_SESSION['username'])){
-              if($_SESSION['pdetails']=="order"){
-                  echo "<a href='logout.php' style='float: right;'>Logout</a>";
-                  echo "<a href='#' style='float: right;'>{$_SESSION['username']}</a>";
-
-              }else{
-                      header('location:order.php');
-              }
-            }else{
-                      header('location:login.php');
-              }
-        ?>
-</div> -->
-
-
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <a class="navbar-brand mr-auto mr-lg-0 fas fa-coffee" href="index.php" style="padding-right: 20px;font-size: 30px;"><span style="padding-left: 20px;">Cup o' Joe</span></a>
   <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
     <span class="navbar-toggler-icon"></span>
