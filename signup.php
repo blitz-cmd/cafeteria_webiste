@@ -97,7 +97,7 @@
                 <label for="inputConfirmPassword">Re-enter</label>
               </div>
               
-              <div class="g-recaptcha" data-sitekey="6Leq09MZAAAAADd2v7irPraoAfFRCtecRmdir4pi" style="padding-left: 34px; padding-bottom: 15px;"></div>
+              <div class="g-recaptcha" data-sitekey="<<your recaptcha api key>>" style="padding-left: 34px; padding-bottom: 15px;"></div>
 
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Register</button>
@@ -120,7 +120,7 @@
                 $query=mysqli_query($con,$emailquery);
                 $emailcount=mysqli_num_rows($query);
 
-                $secretkey="6Leq09MZAAAAAKX3UjlJXP8Z7T1K92fA4XfKF2D1";
+                $secretkey="<<your recaptcha secret key>>";
                 $responsekey=$_POST['g-recaptcha-response'];
                 $userip=$_SERVER['REMOTE_ADDR'];
                 $url="https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$responsekey&remoteip=$userip";

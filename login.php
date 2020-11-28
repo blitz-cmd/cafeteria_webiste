@@ -87,7 +87,7 @@
                 <label for="inputPassword">Password</label>
               </div>
               
-              <div class="g-recaptcha" data-sitekey="6Leq09MZAAAAADd2v7irPraoAfFRCtecRmdir4pi" style="padding-left: 34px; padding-bottom: 15px;"></div>
+              <div class="g-recaptcha" data-sitekey="<<your recaptcha key>>" style="padding-left: 34px; padding-bottom: 15px;"></div>
 
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Login</button>
@@ -108,7 +108,7 @@
                   date_default_timezone_set('Asia/Kolkata');
                   $date = date('d-m-Y H:i:s');  
 
-                  $secretkey="6Leq09MZAAAAAKX3UjlJXP8Z7T1K92fA4XfKF2D1";
+                  $secretkey="<<your recaptcha secret key>>";
                   $responsekey=$_POST['g-recaptcha-response'];
                   
                   $ip = getenv('HTTP_CLIENT_IP')?:
