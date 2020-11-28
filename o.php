@@ -12,7 +12,7 @@ if(isset($_POST['order'])){
 $q1=$_POST['n1'];$q2=$_POST['n2'];$q3=$_POST['n3'];$q4=$_POST['n4'];$q5=$_POST['n5'];$q6=$_POST['n6'];$q7=$_POST['n7'];
 $q8=$_POST['n8'];$q9=$_POST['n9'];$sum=0;
 
-
+ 
 $orderid="#id".rs(8);
 
 $ordersearch="select * from orderhistory where id='$orderid'";
@@ -79,4 +79,4 @@ ob_end_clean();
 
 }
 }
-?>
+?>;

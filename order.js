@@ -32,7 +32,7 @@ function sc3(value){
   sum=a+b+c+d+e+f+g+h+i;  
   tot.textContent=sum;
 }
-
+    
 function sc4(value){
   console.log(value);
   var b4=document.querySelector('#o4').innerText;

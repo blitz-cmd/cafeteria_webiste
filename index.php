@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
   <html>
   <head>
     <meta charset="utf-8">
@@ -110,7 +111,7 @@
 
     <div class="container row1" id="ord">
       <div class="col-xl-5">
-        <h1 style="font-family: 'Ranchers', cursive;font-size: revert;">3 WAYS TO <br><span style="font-family: 'Sansita Swashed', cursive;font-size: 90px;">JOE<span> <img src="images/oderr.jpg" alt=""> </h1>
+        <h1 style="font-family: 'Ranchers', cursive;font-size: revert;">3 WAYS TO <br><span style="font-family: 'Sansita Swashed', cursive;font-size: 90px;">JOE</span> <img src="images/oderr.jpg" alt=""> </h1>
         <p style="font-family: 'Pacifico', cursive;letter-spacing: 3px;">Select your pickup preference when <br>you Order from our site</p>
         <a href="news.php" class="btn btn-info" style="border-radius: 20px;font-weight: 900;">SEE HOW WE'RE SERVING SAFELY</a>
       </div>

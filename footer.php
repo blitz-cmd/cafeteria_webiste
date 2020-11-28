@@ -31,4 +31,4 @@
     <p>Trademark - Cup o' Joe 2020. All Rights Reserved to Blitz<br>
   </p>
   </div>
-  </div>
+  </div>  
